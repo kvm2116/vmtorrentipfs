@@ -1,0 +1,16 @@
+./traverse_all_nodes.sh 54.213.225.206
+./traverse_all_nodes.sh 54.201.8.21
+./traverse_all_nodes.sh 54.202.91.81
+./traverse_all_nodes.sh 54.214.124.176
+./traverse_all_nodes.sh 54.162.158.73
+./traverse_all_nodes.sh 34.234.88.125
+./traverse_all_nodes.sh 34.229.169.234
+./traverse_all_nodes.sh 34.229.73.236
+./traverse_all_nodes.sh 34.244.65.197
+./traverse_all_nodes.sh 54.229.114.184
+./traverse_all_nodes.sh 52.210.71.186
+./traverse_all_nodes.sh 54.229.224.100
+./traverse_all_nodes.sh 18.220.38.10
+./traverse_all_nodes.sh 18.217.50.0
+./traverse_all_nodes.sh 18.217.121.96
+./traverse_all_nodes.sh 18.219.56.192

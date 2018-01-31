@@ -125,8 +125,9 @@ def get_files(ip, src_directory, dst_directory, csvtemp, image, private_ip, log_
     start_time = time.time()
     subprocess.call(['/home/ubuntu/go/bin/ipfs', 'get', image])
     end_time = time.time()
- 
-    with open(log_dir_path + script_type +
+    exp_type = sys.argv[5]
+    
+    with open(log_dir_path + exp_type + script_type +
               private_ip + '.csv', 'a+') as csvwritefile:
         fieldnames = ['trial#','from nodename', 'image','from ip',
                       'datestamp','start time', 'end time']

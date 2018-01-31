@@ -72,19 +72,19 @@ def main():
         reader = csv.DictReader(csvfile)
         world_nodes = list(reader)
     
-    # print 'running rsync UNDER_ATTACK'            # Under Attack
-    # exec_exp(us_nodes, 'UNDER_ATTACK_US', 'rsync', RSYNC_SCRIPT)
-    # exec_exp(world_nodes, 'UNDER_ATTACK_world', 'rsync', RSYNC_SCRIPT)
-    # time.sleep(1200)            # wait (time in seconds)
+    print 'running rsync UNDER_ATTACK'            # Under Attack
+    exec_exp(us_nodes, 'UNDER_ATTACK_US', 'rsync', RSYNC_SCRIPT)
+    exec_exp(world_nodes, 'UNDER_ATTACK_world', 'rsync', RSYNC_SCRIPT)
+    time.sleep(1200)            # wait (time in seconds)
 
-    # print 'dumping images after rsync UNDER_ATTACK'
-    # dump_images(us_nodes)
-    # dump_images(world_nodes)
+    print 'dumping images after rsync UNDER_ATTACK'
+    dump_images(us_nodes)
+    dump_images(world_nodes)
 
-    # print 'adding images to local store before vmt_ipfs, UNDER_ATTACK'
-    # local_store_operation('US', 'UNDER_ATTACK', 'ADD')
-    # local_store_operation('WORLD', 'UNDER_ATTACK', 'ADD')
-    # time.sleep(600)            # wait (time in seconds)
+    print 'adding images to local store before vmt_ipfs, UNDER_ATTACK'
+    local_store_operation('US', 'UNDER_ATTACK', 'ADD')
+    local_store_operation('WORLD', 'UNDER_ATTACK', 'ADD')
+    time.sleep(600)            # wait (time in seconds)
 
     print 'running vmt_ipfs, UNDER_ATTACK'
     exec_exp(us_nodes, 'UNDER_ATTACK_US', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)

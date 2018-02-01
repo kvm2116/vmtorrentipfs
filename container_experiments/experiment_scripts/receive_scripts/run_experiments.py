@@ -21,7 +21,7 @@ SERV_INFO_SHUFFLE_WO = '../server_info/server_ips_SHUFFLE_world.csv'
 src_dir = '/home/ubuntu/'
 dest_dir = '/home/ubuntu/images/' 
 key = '../key/aws_keys/id_rsa'
-trial_num = 0
+trial_num = 3
 RSYNC_SCRIPT = '/home/ubuntu/experiment_scripts/receive_scripts/get_rsync.py'
 IPFS_SCRIPT = '/home/ubuntu/experiment_scripts/receive_scripts/get_ipfs.py'
 SETUP_IPFS_SCRIPT = 'setup_ipfs_local_store.py'
@@ -42,7 +42,7 @@ def exec_exp(nodes, mode_region, exp_type, code_script):
 def dump_images(nodes):
     for row in nodes:
         ip = row["publicip"]
-        command = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ' + key + ' ubuntu@' + ip + ' \"sudo screen -d -m rm -rf ' + dest_dir + '\"'
+        command = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ' + key + ' ubuntu@' + ip + ' \"sudo screen -d -m rm -rf /home/ubuntu/Q* ' + dest_dir + '\"'
         os.popen(command)
 
 def local_store_operation(region, mode, action):
@@ -71,64 +71,64 @@ def main():
     with open(SERV_INFO_ATTACK_WO, 'rU') as csvfile:
         reader = csv.DictReader(csvfile)
         world_nodes = list(reader)
+
+    # # UNCOMMENT BELOW FOR UNDER_ATTACK
+    # # print 'deleting images to local store before vmt_ipfs, UNDER_ATTACK'
+    # # local_store_operation('US', 'UNDER_ATTACK', 'DEL')
+    # # local_store_operation('WORLD', 'UNDER_ATTACK', 'DEL')
+
+    # print 'adding images to local store before vmt_ipfs, UNDER_ATTACK'
+    # local_store_operation('US', 'UNDER_ATTACK', 'ADD')
+    # local_store_operation('WORLD', 'UNDER_ATTACK', 'ADD')
+
+    # print 'running vmt_ipfs, UNDER_ATTACK'
+    # exec_exp(us_nodes, 'UNDER_ATTACK_US', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
+    # exec_exp(world_nodes, 'UNDER_ATTACK_world', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
+
+    # print 'dumping images after vmt_ipfs, UNDER_ATTACK'
+    # dump_images(us_nodes)
+    # dump_images(world_nodes)
+
+    # # print 'deleting images to local store before vmt_ipfs, UNDER_ATTACK'
+    # # local_store_operation('US', 'UNDER_ATTACK', 'DEL')
+    # # local_store_operation('WORLD', 'UNDER_ATTACK', 'DEL')
     
-    print 'running rsync UNDER_ATTACK'            # Under Attack
-    exec_exp(us_nodes, 'UNDER_ATTACK_US', 'rsync', RSYNC_SCRIPT)
-    exec_exp(world_nodes, 'UNDER_ATTACK_world', 'rsync', RSYNC_SCRIPT)
-    time.sleep(1200)            # wait (time in seconds)
+    # print 'running rsync UNDER_ATTACK'            # Under Attack
+    # exec_exp(us_nodes, 'UNDER_ATTACK_US', 'rsync', RSYNC_SCRIPT)
+    # exec_exp(world_nodes, 'UNDER_ATTACK_world', 'rsync', RSYNC_SCRIPT)
 
-    print 'dumping images after rsync UNDER_ATTACK'
-    dump_images(us_nodes)
-    dump_images(world_nodes)
+    # print 'dumping images after rsync UNDER_ATTACK'
+    # dump_images(us_nodes)
+    # dump_images(world_nodes)
 
-    print 'adding images to local store before vmt_ipfs, UNDER_ATTACK'
-    local_store_operation('US', 'UNDER_ATTACK', 'ADD')
-    local_store_operation('WORLD', 'UNDER_ATTACK', 'ADD')
-    time.sleep(600)            # wait (time in seconds)
-
-    print 'running vmt_ipfs, UNDER_ATTACK'
-    exec_exp(us_nodes, 'UNDER_ATTACK_US', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
-    exec_exp(world_nodes, 'UNDER_ATTACK_world', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
-    time.sleep(1200)           #wait (time in seconds)
-
-    print 'dumping images after vmt_ipfs, UNDER_ATTACK'
-    dump_images(us_nodes)
-    dump_images(world_nodes)
-
-    print 'deleting images to local store before vmt_ipfs, UNDER_ATTACK'
-    local_store_operation('US', 'UNDER_ATTACK', 'DEL')
-    local_store_operation('WORLD', 'UNDER_ATTACK', 'DEL')
-    
+    # UNCOMMENT BELOW FOR SHUFFLE
     # SHUFFLE 
-    print 'running rsync SHUFFLE'
-    exec_exp(us_nodes, 'SHUFFLE_US', 'rsync', RSYNC_SCRIPT)
-    exec_exp(world_nodes, 'SHUFFLE_world', 'rsync', RSYNC_SCRIPT)
-    time.sleep(1200)            # wait (time in seconds)
-
-    print 'dumping images after rsync SHUFFLE'
-    dump_images(us_nodes)
-    dump_images(world_nodes)
-
     print 'adding images to local store before vmt_ipfs, SHUFFLE'
     local_store_operation('US', 'SHUFFLE', 'ADD')
     local_store_operation('WORLD', 'SHUFFLE', 'ADD') 
-    time.sleep(600)            # wait (time in seconds)
 
     print 'running vmt_ipfs, SHUFFLE'
     exec_exp(us_nodes, 'SHUFFLE_US', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
     exec_exp(world_nodes, 'SHUFFLE_world', 'vmt_ipfs', IPFS_SCRIPT)          #- run vmtorrent(ipfs)
-    time.sleep(1200)           #wait (time in seconds)
 
     print 'dumping images after vmt_ipfs, SHUFFLE'
     dump_images(us_nodes)
     dump_images(world_nodes)
 
-    print 'deleting images to local store before vmt_ipfs, SHUFFLE'
-    local_store_operation('US', 'SHUFFLE', 'DEL')
-    local_store_operation('WORLD', 'SHUFFLE', 'DEL')
+    # print 'deleting images to local store before vmt_ipfs, SHUFFLE'
+    # local_store_operation('US', 'SHUFFLE', 'DEL')
+    # local_store_operation('WORLD', 'SHUFFLE', 'DEL')
 
-    print 'generating graphs'
-    generate_graphs()
+    print 'running rsync SHUFFLE'
+    exec_exp(us_nodes, 'SHUFFLE_US', 'rsync', RSYNC_SCRIPT)
+    exec_exp(world_nodes, 'SHUFFLE_world', 'rsync', RSYNC_SCRIPT)
+
+    print 'dumping images after rsync SHUFFLE'
+    dump_images(us_nodes)
+    dump_images(world_nodes)
+
+    # print 'generating graphs'
+    # generate_graphs()
 
 if __name__ == '__main__':
     main()   # Script should have been populated alread using populate_scripts.py and images should have been populated using populate_images.py

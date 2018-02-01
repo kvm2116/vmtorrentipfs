@@ -3,6 +3,12 @@ import subprocess
 import os
 import csv
 
+
+"""
+
+python ipfsfetchid.py
+"""
+
 ips = []
 
 with open('dest_ips.txt', 'r') as f:

@@ -1,19 +1,24 @@
-ipfs swarm connect /ip4/10.0.1.0/tcp/4001/ipfs/QmQEsTGjZJjhuA3ZrZ4DgPf8DVHfJe1ZetYp3gkmiDpawY
-ipfs swarm connect /ip4/10.0.1.1/tcp/4001/ipfs/QmUHqisB68ZpbWQN3RhCYci5qQLy792mEbaSmQN8oqY91K
-ipfs swarm connect /ip4/10.0.1.2/tcp/4001/ipfs/QmVAEmwMH9ohY1kpcGFM8iNJZ9w2NTNYMyEWsZtvRnZbYK
-ipfs swarm connect /ip4/10.0.1.3/tcp/4001/ipfs/QmWL33dshJ6SGN7ucDwBmr4KNi9RH2q3YsZDoaF6C7Qp75
-ipfs swarm connect /ip4/10.1.1.0/tcp/4001/ipfs/Qmc86sxLaViz4TgncGN6H58KRZE8fWCMxcBUX5h2geebNr
-ipfs swarm connect /ip4/10.1.1.1/tcp/4001/ipfs/QmeXpAdpNdQVTBP5ps6tkGc3kxDXTdEPCixZ6uyNAH7w9J
-ipfs swarm connect /ip4/10.1.1.2/tcp/4001/ipfs/QmaEnHUwJty5Md2HXdEuRQ66G3CCdwanrLWq8PU2yfANJC
-ipfs swarm connect /ip4/10.1.1.3/tcp/4001/ipfs/QmZ8g5zx4qzHX3XPb37MUxjinggUnG64ES1u6YmkjwHNWa
+US:
+
+ipfs swarm connect /ip4/10.0.1.184/tcp/4001/ipfs/QmasK6h8FGXwWFPTYqFGYjmMdq5FrSYQVBmBAz3ZbHwHn6
+ipfs swarm connect /ip4/10.0.9.209/tcp/4001/ipfs/QmYjXVSGJKegUAm26Tw5hPkhpQbQ4u4gLEgWbDQYfFgdYT
+ipfs swarm connect /ip4/10.0.12.89/tcp/4001/ipfs/QmTGHNhXZ9DDSbcKMgbejdq3ouu5d3Yy9Xv4syNgBnZUqp
+ipfs swarm connect /ip4/10.0.2.26/tcp/4001/ipfs/QmctMRAn7LdLJY6jmakDoHNZMd2WoHsQwNDjNch5UqoK4r
+ipfs swarm connect /ip4/10.1.12.133/tcp/4001/ipfs/QmZu8roeqHozwvyeorbrDQTY4c75DPyDHcotnHorXnPQDj
+ipfs swarm connect /ip4/10.1.6.72/tcp/4001/ipfs/QmTchCSfGZvtrNtUqfpLwdS8PgPqdzqGyfHgCkzkWaJgJk
+ipfs swarm connect /ip4/10.1.6.236/tcp/4001/ipfs/QmVmN3BTTc9ewqP1vEH1iLKR1SmXSw6TFShpXECPSfbVkL
+ipfs swarm connect /ip4/10.1.2.203/tcp/4001/ipfs/Qmbz3qg8W9uDsvvyPg1p2PS9f85gSuKyNjnwwgs49fLEkf
 
 
 
-ipfs swarm connect /ip4/10.2.4.57/tcp/4001/ipfs/QmdDiqhrJwS3bEBg45QhNtdshL8vQxKyyryGShR5Mbah2r
-ipfs swarm connect /ip4/10.2.7.202/tcp/4001/ipfs/QmdS18By9otDC1biXCBDShSw996MrV7o6tVsbNkDd6wirn
-ipfs swarm connect /ip4/10.2.9.160/tcp/4001/ipfs/QmPAcTVt8eHoQAr3ZpT5Xhc6c76wYJWX735APKQ5tttLez
-ipfs swarm connect /ip4/10.2.1.132/tcp/4001/ipfs/Qmf3vc7XfctkqsDKq8ZiBpisG3uqj7KY97eXdKarCeN6xr
-ipfs swarm connect /ip4/10.3.1.240/tcp/4001/ipfs/QmcURPtLdXW2shz4apro7nyodGee42rPNs2fEjyL77BzZg
-ipfs swarm connect /ip4/10.3.6.112/tcp/4001/ipfs/QmPck5wWcBdfQJtwzccbe1Rhrj8eV9q1YRRocQegEiEF17
-ipfs swarm connect /ip4/10.3.1.19/tcp/4001/ipfs/QmPxXUQb2aD76sVrY1zTbX8j8XTkCgi7QDhifvMSysWwpg
-ipfs swarm connect /ip4/10.3.2.209/tcp/4001/ipfs/QmP9gF9pg3D1ikLqPbKwRrVqL6UmUK1RBS5jcnCnDm7dvT
+WORLD:
+
+ipfs swarm connect /ip4/10.2.5.214/tcp/4001/ipfs/QmWSuyszsoK671xdXizkEheEPFFmNDazqMqhCqKRuPbYF7
+ipfs swarm connect /ip4/10.2.7.27/tcp/4001/ipfs/QmTZatCsfKbmLB4EtLC6Np37VZbJeudTNXUbX9vWwnhreX
+ipfs swarm connect /ip4/10.2.15.63/tcp/4001/ipfs/QmQsTMgvoDa9LusAdYdjNcqaMHYSMxCjjGwtamroMLJJeW
+ipfs swarm connect /ip4/10.2.10.43/tcp/4001/ipfs/QmSd3RJTaWGBdFtjcE3quM95LCBVH83d6Htx7ZMhre2upR
+ipfs swarm connect /ip4/10.3.8.97/tcp/4001/ipfs/Qmey7DKSQiAmgDXM25ZrwePvgtCpLGa16FpZMfwjjWA1EH
+ipfs swarm connect /ip4/10.3.4.76/tcp/4001/ipfs/Qma6iwCdhkiFYu2dRCqAFKJ8jwteCPEbcBuQSqnfWpd3Xj
+ipfs swarm connect /ip4/10.3.0.140/tcp/4001/ipfs/QmWmZwLVggzPoRAacePbh81mPHQGHiymdA5RHtXqvddgRU
+ipfs swarm connect /ip4/10.3.7.202/tcp/4001/ipfs/QmT9ZWnYeuDsVbxxx2NftCuTRKbBPMowyzNP4PezHnUM2y
+

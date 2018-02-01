@@ -34,7 +34,7 @@ def main():
     exp_type = sys.argv[5]
     script_type = sys.argv[6]
     fd.write('Parsed arguments\n')
-    log_dir_path = '../../logs/' + trial_num + '/' + file_type + '/' + exp_type + '/'
+    log_dir_path = '/home/ubuntu/logs/' + trial_num + '/' + file_type + '/' + exp_type + '/'
     if not os.path.exists(log_dir_path):
         os.makedirs(log_dir_path)
         fd.write('Creating LOG directory\n')
@@ -126,7 +126,7 @@ def get_files(ip, src_directory, dst_directory, csvtemp, image, private_ip, log_
     subprocess.call(['/home/ubuntu/go/bin/ipfs', 'get', image])
     end_time = time.time()
     exp_type = sys.argv[5]
-    
+
     with open(log_dir_path + exp_type + script_type +
               private_ip + '.csv', 'a+') as csvwritefile:
         fieldnames = ['trial#','from nodename', 'image','from ip',

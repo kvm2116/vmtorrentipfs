@@ -42,24 +42,36 @@ def main():
         iplist = [row.get('publicip') for row in reader]
 
     # send 2 container images to each machine
-    for i in range(1,9):
+    for i in range(5,9):
         address = 'ubuntu@' + iplist[i-1] + ':'
         image1 = images_dir + '/' + str(2*i - 1)
         image2 = images_dir + '/' + str(2*i)
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image1, address])
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image2, address])
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image1 + " " + address
+        os.popen(command)
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image2 + " " + address
+        os.popen(command)
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image1, address])
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image2, address])
 
     # send 4 container images to each machine
     for i in range(1,5):
         address = 'ubuntu@' + iplist[i-1] + ':'
-        image1 = images_dir + '/' + str(4*i - 3) 
-        image2 = images_dir + '/' + str(4*i - 2)
-        image3 = images_dir + '/' + str(4*i - 1)
-        image4 = images_dir + '/' + str(4*i) 
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image1, address])
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image2, address])
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image3, address])
-        subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image4, address])
+        image1 = images_dir + '/' + str(2*i + 7) 
+        image2 = images_dir + '/' + str(2*i + 8)
+        image3 = images_dir + '/' + str(2*i - 1)
+        image4 = images_dir + '/' + str(2*i) 
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image1 + " " + address
+        os.popen(command)
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image2 + " " + address
+        os.popen(command)
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image3 + " " + address
+        os.popen(command)
+        command = "rsync -avzhe \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + "\" " + image4 + " " + address
+        os.popen(command)
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image1, address])
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image2, address])
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image3, address])
+        # subprocess.call(['scp', '-o', 'UserKnownHostsFile=/dev/null', '-o', 'StrictHostKeyChecking=no','-i', KEY, image4, address])
     
 if __name__ == '__main__':
     main()

@@ -62,10 +62,10 @@ def main():
         elif experiment == 'UNDER_ATTACK':
             for i in range(1,5):
                 address = 'ubuntu@' + iplist[i-1]
-                image1 = str(4*i - 3) 
-                image2 = str(4*i - 2)
-                image3 = str(4*i - 1)
-                image4 = str(4*i) 
+                image1 = str(2*i + 7) 
+                image2 = str(2*i + 8)
+                image3 = str(2*i - 1)
+                image4 = str(2*i) 
                 exec_command(address, image1)
                 exec_command(address, image2)
                 exec_command(address, image3)
@@ -75,8 +75,8 @@ def main():
     elif action == 'DEL':
         for ip in iplist:
             address= 'ubuntu@' + ip
-            unpin = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + " " + address + " /home/ubuntu/go/bin/ipfs pin ls --type recursive | cut -d' ' -f1 | xargs -n1 /home/ubuntu/go/bin/ipfs pin rm"
-            os.popen(unpin)
+            # unpin = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + " " + address + " \"/home/ubuntu/go/bin/ipfs pin ls --type recursive | cut -d' ' -f1 | xargs -n1 /home/ubuntu/go/bin/ipfs pin rm\""
+            # os.popen(unpin)
             gc = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i " + KEY + " " + address + " /home/ubuntu/go/bin/ipfs repo gc"
             os.popen(gc)
     else:
